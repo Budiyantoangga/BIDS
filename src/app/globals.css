@@ -1,42 +1,139 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+/* Mengatur font keluarga global menjadi Roboto */
 * {
+  font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
+  margin: 0;
   padding: 0;
+}
+
+/* Pastikan html dan body mengisi seluruh layar */
+html, body {
+  height: 100%;
   margin: 0;
 }
 
-a {
-  color: inherit;
+/* Style untuk container login */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #262625, #d70c0c); /* Warna latar belakang */
+}
+
+/* Card login */
+.login-card {
+  background-color: rgb(226, 222, 222);
+  padding: 40px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 450px; /* Maksimal lebar untuk card login */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek ketika card di-hover */
+.login-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Judul dan subtitle */
+.login-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* Grup input */
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Label input */
+.input-label {
+  display: block;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+/* Input field */
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek saat input difokuskan */
+.input-field:focus {
+  border-color: #d70c0c;
+  box-shadow: 0 0 5px #d70c0c;
+}
+
+/* Button login */
+.login-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #d70c0c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #262625;
+  transform: translateY(-5px);
+}
+
+/* Link untuk signup */
+.signup-link {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.signup-link-text {
+  color: #d70c0c;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.signup-link-text:hover {
+  text-decoration: underline;
+  color: #d70c0c;
+}
+
+/* Responsif */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 20px;
+  }
+
+  .login-title {
+    font-size: 1.5rem;
+  }
+
+  .input-field {
+    font-size: 0.9rem;
+  }
+
+  .login-button {
+    font-size: 1rem;
   }
 }
